@@ -9,22 +9,12 @@ public class App {
         for (int i = -startDay +2; i <= dayQuantaty;) {
             //Create the lines
             for (int k = 0; k < 7 && i <= dayQuantaty; k++ ,i++) {
-
-                //Create entry
-                if (i > 0) {
-                    if (i >= 10) {
-                        System.out.print(i);
-                    }
-                    else {
-                        System.out.print(" " +i);
-                    }
+                if (i <= 0) {
+                    System.out.print("   ");
                 }
                 else {
-                    System.out.print("  ");
+                   System.out.printf("%2d ",i);
                 }
-
-                //Space between entry
-                System.out.print(" ");
             }
 
             System.out.println();
@@ -37,7 +27,7 @@ public class App {
         long M = 2147483648L;
         long[] list = new long[NUMBER];
 
-        list[0] = seed;
+        list[0] = (A* (seed) + C) % M;;
         for (int i = 1; i < NUMBER; i++) {
             list[i] = (A* (list[i -1]) + C) % M;
         }
