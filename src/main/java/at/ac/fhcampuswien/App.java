@@ -37,7 +37,7 @@ public class App {
         long M = 2147483648L;
         long[] list = new long[NUMBER];
 
-        list[0] = 12345;
+        list[0] = seed;
         for (int i = 1; i < NUMBER; i++) {
             list[i] = (A* (list[i -1]) + C) % M;
         }
@@ -135,22 +135,25 @@ public class App {
         result = 11 - sum % 11;
 
         if (result == 11) return 5;
-        else return result;
+        if (result == 10) return 0;
+        return result;
     }
 
 
     public static void main(String[] args) {
         App exercise3 = new App();
 
-        System.out.println("Task 1: Largest Number");
-        exercise3.oneMonthCalendar(30, 3);
+        oneMonthCalendar(30, 3);
 
-        System.out.println("Task 2:");
-        exercise3.lcg(1);
+        lcg(1);
 
-        exercise3.guessingGame(randomNumberBetweenOneAndHundred());
+        guessingGame(randomNumberBetweenOneAndHundred());
 
+        swapArrays(new int[]{3, 9, 1, 5, 8}, new int[]{3, 9, 1, 5, 8});
 
+        camelCase("Hallo23 jklsdf alskdfjJLKJ");
+
+        checkDigit(new int[]{0, 0, 4, 4, 4, 8, 2, 9, 3});
 
     }
 }
